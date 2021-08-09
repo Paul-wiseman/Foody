@@ -1,10 +1,11 @@
+
 # Smart-Meal-Recipes
 Modern Food Recipes App - Android Application with Kotlin
 
 
 Smart Meal Recipes is an android application which allows users to view variaties of food and drinks across cultures and continents and also understand the relationships between ingredients, recipes, nutrition, allergens, and more. 
 
-Users can now search for any food or drink and recieve nutritional informations, ingredients and  instructions on it is prepared.
+Users can also search for any food or drink and recieve nutritional informations, ingredients and  instructions on how it is prepared.
 
 
 
@@ -25,4 +26,6 @@ Smart Meal Recipes is designed leveraging latest standards, architecture and bes
 - [Coil](https://github.com/coil-kt/coil)
 - [Facebook Shimmer Recyclerview](https://velmurugan-murugesan.medium.com/shimmer-effect-for-android-recyclerview-example-a9315b46cdc0)
 - And many more
+
+![foody](https://user-images.githubusercontent.com/75781391/128740047-a1a9682e-de73-485d-8270-280e495af769.png)
 
