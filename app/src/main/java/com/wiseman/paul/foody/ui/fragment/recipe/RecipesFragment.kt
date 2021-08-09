@@ -20,9 +20,11 @@ import com.wiseman.paul.foody.util.NetworkResult
 import com.wiseman.paul.foody.util.observerOnce
 import com.wiseman.paul.foody.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+ @ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
@@ -45,15 +47,16 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.mainViewModel = mainViewModel
+        setHasOptionsMenu(true)
+        setUpAdapter()
 
         binding.recipesFab.setOnClickListener {
-
             if (recipeViewModel.networkStatus) {
                 findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
             } else {
@@ -61,13 +64,11 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
             }
         }
 
-        setUpAdapter()
-
         recipeViewModel.readBackOnline.observe(viewLifecycleOwner, {
             recipeViewModel.backOnline = it
         })
 
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenStarted {
             networkListener = NetworkListener()
             networkListener.checkNetworkAvailability(requireContext())
                 .collect { status ->
@@ -78,8 +79,6 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                 }
         }
 
-
-        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -93,7 +92,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
        lifecycleScope.launch {
            mainViewModel.readRecipes.observerOnce(viewLifecycleOwner, { database ->
                if (database.isNotEmpty() && !args.backFromBottomSheet) {
-                   Log.d("RecipeFragment", "readDatabase called ")
+                   Log.d("RecipeFragment", "readRecipes called ")
                    mAdapter.setData(database[0].foodRecipe)
                    hideShimmer()
                } else {
@@ -195,8 +194,8 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.recyclerview.hideShimmer()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+     override fun onDestroyView() {
+         super.onDestroyView()
          _binding = null
-    }
+     }
 }

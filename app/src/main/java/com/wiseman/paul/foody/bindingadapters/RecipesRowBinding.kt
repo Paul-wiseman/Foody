@@ -12,6 +12,7 @@ import coil.load
 import com.wiseman.paul.foody.R
 import com.wiseman.paul.foody.models.Result
 import com.wiseman.paul.foody.ui.fragment.recipe.RecipesFragmentDirections
+import org.jsoup.Jsoup
 
 class RecipesRowBinding {
     companion object {
@@ -40,19 +41,6 @@ class RecipesRowBinding {
             }
         }
 
-
-        @BindingAdapter("setNumberOfLikes")
-        @JvmStatic
-        fun setNumberOfLikes(text: TextView, likes: Int) {
-            text.text = likes.toString()
-        }
-
-        @BindingAdapter("setNumberOfMinutes")
-        @JvmStatic
-        fun setNumberOfMinutes(text: TextView, minutes: Int) {
-            text.text = minutes.toString()
-        }
-
         @BindingAdapter("applyVeganColor")
         @JvmStatic
         fun applyVeganColor(view: View, vegan: Boolean) {
@@ -67,6 +55,15 @@ class RecipesRowBinding {
                         view.setColorFilter(ContextCompat.getColor(view.context, R.color.green))
                     }
                 }
+            }
+        }
+
+        @BindingAdapter("parseHtml")
+        @JvmStatic
+        fun parseHtml(textView: TextView, description: String?){
+            if(description != null) {
+                val desc = Jsoup.parse(description).text()
+                textView.text = desc
             }
         }
     }

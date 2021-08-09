@@ -25,7 +25,11 @@
         android:id="@+id/favouriteRecipesFragment"
         android:name="com.wiseman.paul.foody.ui.fragment.favorite.FavouriteRecipesFragment"
         android:label="Favourite"
-        tools:layout="@layout/fragment_favourite_recipes" />
+        tools:layout="@layout/fragment_favourite_recipes" >
+        <action
+            android:id="@+id/action_favouriteRecipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokesFragment"
         android:name="com.wiseman.paul.foody.ui.fragment.foodjokes.FoodJokesFragment"
@@ -38,7 +42,9 @@
         tools:layout="@layout/recipes_bottom_sheet" >
         <action
             android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
-            app:destination="@id/recipesFragment" />
+            app:destination="@id/recipesFragment"
+            app:popUpTo="@id/recipesFragment"
+            app:popUpToInclusive="true" />
     </dialog>
     <activity
         android:id="@+id/detailsActivity"
@@ -46,7 +52,8 @@
         android:label="Details"
         tools:layout="@layout/activity_details" >
         <argument
-            android:name=" result"
+            android:name="result"
             app:argType="com.wiseman.paul.foody.models.Result" />
     </activity>
+
 </navigation>

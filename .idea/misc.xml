@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-xhdpi/ic_food_joke_background_dark.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_food_joke_background.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_menu_book.xml" value="0.2546875" />
+        <entry key="app/src/main/res/layout-night/fragment_food_jokes.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.1537037037037037" />
+        <entry key="app/src/main/res/layout/favorite_recipes_row_layout.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/fragment_favourite_recipes.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/fragment_food_joke.xml" value="0.14166666666666666" />
+        <entry key="app/src/main/res/layout/fragment_food_jokes.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_ingredients.xml" value="0.1537037037037037" />
+        <entry key="app/src/main/res/layout/fragment_overview.xml" value="0.3872752420470263" />
+        <entry key="app/src/main/res/layout/fragment_recipes.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/ingredients_row_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/place_holder_row_layout.xml" value="0.22982635342185903" />
+        <entry key="app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/recipes_row_layout.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/detail_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/favorite_recipes_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/favorites_contextual_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/menu/food_joke_menu.xml" value="0.234375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

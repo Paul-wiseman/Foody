@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="mainViewModel"
-            type="com.wiseman.paul.foody.viewmodels.MainViewModel" />
+    <variable
+        name="mainViewModel"
+        type="com.wiseman.paul.foody.viewmodels.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/lightGray"
+        android:background="@color/backgroundColor"
         tools:context=".ui.fragment.recipe.RecipesFragment">
 
         <com.todkars.shimmer.ShimmerRecyclerView
@@ -64,8 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            readApiResponse2="@{mainViewModel.recipeResponse}"
-            readDatabase2="@{mainViewModel.readRecipes}"
+            readApiResponse="@{mainViewModel.recipeResponse}"
+            readDatabase ="@{mainViewModel.readRecipes}"
             android:alpha="0.5"
             android:text="@string/no_internet_connection"
             android:textSize="18sp"

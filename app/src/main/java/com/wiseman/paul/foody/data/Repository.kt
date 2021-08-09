@@ -1,6 +1,5 @@
 package com.wiseman.paul.foody.data
 
-import com.wiseman.paul.foody.data.RemoteDataSource
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 

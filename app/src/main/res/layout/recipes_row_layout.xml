@@ -28,13 +28,13 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/lightMediumGray"
+            app:strokeColor="@color/strokeColor"
             app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white">
+                android:background="@color/cardBackgroundColor">
 
                 <ImageView
                     android:id="@+id/recipe_image_view"
@@ -58,7 +58,7 @@
                     android:fontFamily="@font/courgette"
                     android:maxLines="2"
                     android:text="@{results.title}"
-                    android:textColor="@color/darker"
+                    android:textColor="@color/titleColor"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +73,8 @@
                     android:layout_marginTop="12dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:text="@{results.summary}"
-                    android:textColor="@color/darkGray"
+                    parseHtml="@{results.summary}"
+                    android:textColor="@color/descriptionColor"
                     app:layout_constraintEnd_toEndOf="@+id/title_text_view"
                     app:layout_constraintStart_toStartOf="@+id/title_text_view"
                     app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
@@ -87,19 +87,16 @@
                     android:layout_marginBottom="36dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/likes_text_view"
-                    app:layout_constraintHorizontal_bias="0.411"
                     app:layout_constraintStart_toStartOf="@+id/likes_text_view"
                     app:layout_constraintTop_toBottomOf="@+id/description_text_view"
-                    app:layout_constraintVertical_bias="0.018"
                     app:srcCompat="@drawable/ic_heart"
                     app:tint="@color/red" />
 
                 <TextView
                     android:id="@+id/likes_text_view"
-                    setNumberOfLikes="@{results.aggregateLikes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100"
+                    android:text="@{String.valueOf(results.aggregateLikes)}"
                     android:textAlignment="center"
                     android:textColor="@color/red"
                     app:layout_constraintStart_toStartOf="@+id/description_text_view"
@@ -117,11 +114,10 @@
 
                 <TextView
                     android:id="@+id/clock_text_view"
-                    setNumberOfMinutes="@{results.readyInMinutes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="100"
+                    android:text="@{String.valueOf(results.readyInMinutes)}"
                     android:textAlignment="center"
                     android:textColor="@color/yellow"
                     app:layout_constraintStart_toEndOf="@+id/likes_text_view"
