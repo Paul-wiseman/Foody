@@ -10,13 +10,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface RecipesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertRecipe(recipesEntity: RecipesEntity)
+     fun insertRecipe(recipesEntity: RecipesEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity)
+     fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFoodJoke(foodJokeEntity: FoodJokeEntity)
+     fun insertFoodJoke(foodJokeEntity: FoodJokeEntity)
 
     @Query("SELECT * FROM recipes_table ORDER BY id ASC")
     fun readRecipes(): Flow<List<RecipesEntity>>
@@ -28,8 +28,8 @@ interface RecipesDao {
     fun readFoodJoke(): Flow<List<FoodJokeEntity>>
 
     @Delete
-    suspend fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity)
+     fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity)
 
     @Query("DELETE FROM favorite_recipes_table")
-    suspend fun deleteAllFavoriteRecipes()
+     fun deleteAllFavoriteRecipes()
 }

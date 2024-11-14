@@ -31,10 +31,11 @@ class OverviewFragment : Fragment() {
 
         binding.mainImageView.load(myBundle?.image)
         binding.titleTextView.text = myBundle?.title
+        binding.titleTextView.setTextColor(resources.getColor(R.color.green,requireContext().theme))
         binding.likesTextView.text = myBundle?.aggregateLikes.toString()
         binding.timeTextView.text = myBundle?.readyInMinutes.toString()
         myBundle?.summary.let {
-            val summary = Jsoup.parse(it).text()
+            val summary = it?.let { it1 -> Jsoup.parse(it1).text() }
             binding.summaryTextView.text = summary
         }
 
